@@ -58,6 +58,14 @@ window.__chatNavProviders.gemini = {
     return element.innerText;
   },
 
+  // Optional: Returns the height in pixels of any fixed header,
+  // so scrolling positions messages below it instead of behind it.
+  // If omitted, defaults to 0.
+  getScrollOffset() {
+    const header = document.querySelector('header');
+    return header ? header.getBoundingClientRect().height : 0;
+  },
+
   // Optional: Returns a CSS background color for the sidebar.
   // If omitted or returns null, falls back to the default in sidebar.css.
   getBackgroundColor() {
