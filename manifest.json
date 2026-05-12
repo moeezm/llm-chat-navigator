@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Chat Navigator",
+  "version": "1.0",
+  "description": "Navigate LLM chat conversations with a sidebar of your questions",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://claude.ai/*"],
+      "js": ["providers/claude.js", "core.js"],
+      "css": ["styles/sidebar.css"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://chatgpt.com/*"],
+      "js": ["providers/chatgpt.js", "core.js"],
+      "css": ["styles/sidebar.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      width: 240px;
+      padding: 16px;
+      font-family: system-ui, sans-serif;
+      font-size: 13px;
+      color: #1a1a1a;
+    }
+    h3 {
+      margin: 0 0 12px;
+      font-size: 14px;
+    }
+    label {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+    input {
+      width: 100%;
+      padding: 6px 8px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 13px;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      padding: 8px;
+      background: #1a1a1a;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #333;
+    }
+    .saved {
+      text-align: center;
+      color: #16a34a;
+      margin-top: 8px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h3>Chat Navigator</h3>
+
+  <label for="sidebarWidth">Sidebar width</label>
+  <input type="text" id="sidebarWidth" placeholder="e.g. 10vw, 300px">
+
+  <label for="maxDisplayLength">Max display length</label>
+  <input type="number" id="maxDisplayLength" min="1">
+
+  <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px; cursor: pointer;">
+    <input type="checkbox" id="smoothScroll" style="width: auto; margin: 0;">
+    Smooth scrolling
+  </label>
+
+  <button id="save">Save</button>
+  <div class="saved" id="saved">Settings saved!</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
