@@ -24,6 +24,11 @@ window.__chatNavProviders.claude = {
     return Array.from(paragraphs).map(p => p.textContent).join('\n');
   },
 
+  getScrollOffset() {
+    const header = document.querySelector('header');
+    return header ? header.getBoundingClientRect().height : 0;
+  },
+
   getBackgroundColor() {
     const mainContent = document.getElementById('main-content');
     if (!mainContent) return null;

@@ -48,7 +48,9 @@
       item.textContent = text.length > settings.maxDisplayLength ? text.substring(0, settings.maxDisplayLength) + '...' : text;
       item.title = text;
       item.addEventListener('click', () => {
-        msgEl.scrollIntoView({ behavior: settings.smoothScroll ? 'smooth' : 'auto', block: 'center' });
+        const offset = provider.getScrollOffset ? provider.getScrollOffset() : 0;
+        msgEl.style.scrollMarginTop = (offset + 0) + 'px';
+        msgEl.scrollIntoView({ behavior: settings.smoothScroll ? 'smooth' : 'auto', block: 'start' });
       });
 
       list.appendChild(item);

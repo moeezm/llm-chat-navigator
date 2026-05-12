@@ -16,6 +16,11 @@ window.__chatNavProviders.chatgpt = {
     return child ? child.innerText : '';
   },
 
+  getScrollOffset() {
+    const header = document.querySelector('header');
+    return header ? header.getBoundingClientRect().height : 0;
+  },
+
   getBackgroundColor() {
     const sidebar = document.getElementById('stage-slideover-sidebar');
     if (!sidebar) return null;
